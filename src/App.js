@@ -27,9 +27,25 @@ class App extends Component {
   }
 
   render() {
+
+
+    const buttonStyle = {
+      backgroundColor: this.state.show ? '#4CAF50' : '#f44336', // Vert si affiché, Rouge sinon
+      color: 'white',
+      padding: '10px 20px', // Ajustez cette valeur si nécessaire pour obtenir un cercle parfait
+      margin: '10px',
+      border: '5px solid black', // Bordure noire de 5px
+      cursor: 'pointer',
+      borderRadius: this.state.show ? '0px' : '50%', // Carré si affiché, parfaitement rond sinon
+      width: '100px', // Ajustez en fonction de la taille du texte et du padding pour garder le bouton circulaire
+      height: '100px', // Hauteur égale à la largeur pour le mode circulaire
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    };
     return (
       <div className="App">
-        <button onClick={this.toggleShow}>
+        <button onClick={this.toggleShow} style= {buttonStyle}>
           {this.state.show ? 'Cacher' : 'Afficher'} le profil
         </button>
         {this.state.show && (
